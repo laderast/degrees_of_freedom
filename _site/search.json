@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#what-is-quarto-live",
+    "href": "index.html#what-is-quarto-live",
+    "title": "R Example",
+    "section": "What is Quarto Live?",
+    "text": "What is Quarto Live?\n\ndata(iris)\nsummary(iris)"
+  }
+]

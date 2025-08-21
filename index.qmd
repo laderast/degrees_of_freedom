@@ -1,0 +1,385 @@
+---
+title: Degrees of Freedom
+subtitle: Empower learners with Quarto, WebR, and Pyodide
+author: Ted Laderas, PhD
+engine: knitr
+format: live-revealjs
+resources:
+    - data
+pyodide:
+    packages:
+        - pandas
+        - seaborn
+webr:
+    render-df: paged-table
+    packages:
+      - gradethis
+      - dplyr
+      - ggplot2
+      - palmerpenguins
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| autorun: true
+#| echo: false
+library(ggplot2)
+library(dplyr)
+tv_shows <- read.csv("data/tv_shows.csv")
+my_plot <- 
+  ggplot(tv_shows) + 
+  aes(x = seasonNumber, y= av_rating, group=title, 
+      color = title) + 
+  geom_line()
+```
+
+```{pyodide}
+#| autorun: true
+#| echo: false
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+tv_shows = pd.read_csv("data/tv_shows.csv")
+sns.set_theme()
+my_plot = sns.lineplot(data=tv_shows,
+                 x="seasonNumber",
+                 y="av_rating",
+                 hue="title")
+
+```
+
+## Introduction
+
+- Director of Training and Community for the Data Science Lab at Fred Hutch Cancer Center
+- Teach a wide variety of workforce learners
+- Passionate about evidence-based pedagogy
+
+## First Things First
+
+- Do you want to increase active learning in your data science courses?
+    - Less blank stares?
+    - More discussion?
+    - More interaction?
+
+# Introducing Web Assembly
+## R/Python in your browser
+
+```{webr}
+data(iris)
+summary(iris)
+```
+
+## Why use WebR/Pyodide?
+
+By using WebR/Pyodide/Quarto to:
+
+- lower cognitive load, 
+- encourage active learning, 
+- and increase social learning, 
+
+you engage students to explore R and Python, 
+which results in more effective data science skill development.
+
+# Lower Cognitive Load
+
+## A step before RStudio / VSCode
+
+Barriers to learning:
+
+- Installing R/RStudio without guidance
+- RStudio Interface is overwhelming
+- `install.packages()`
+- **Fear of doing something wrong**
+
+## RStudio / VSCode can be overwhelming
+
+- Context switching adds to the friction
+
+![](rstudio.jpg)
+
+## Lower Friction for New Learners
+
+- Imagine you are brand new to working with programming.
+- Imagine this is your first interaction with R or Python
+
+## Exercise
+
+Run the code chunk below by clicking "run code". 
+
+Before you run it, what do you expect to see?
+
+```{pyodide}
+2 + 2
+```
+
+## Providing Encouragement using `{gradethis}`
+
+- Giving feedback is important
+- Focus attention to reduce fear
+
+## Feedback example
+
+How would I find the `distinct()` `species` in penguins?
+
+```{webr}
+#| exercise: ex_1
+#| setup: true
+library(palmerpenguins)
+library(dplyr)
+```
+
+```{webr}
+#| exercise: ex_1
+penguins |>
+   _______(species)
+```
+
+::: {.solution exercise="ex_1"}
+#### Solution
+
+Use the `distinct()` function.
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+penguins |> 
+    distinct(species)
+```
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_this_code()
+```
+
+## Blah
+
+- Works in revealJS
+- Lets learners jump right in without installs
+- Cover RStudio in a later session
+- Fear of doing something wrong - part of cognitive load
+
+Feedback is about focusing attention
+Reducing fear to reduce cognitive load
+
+### Why?
+
+- Using RStudio in a first session can be overwhelming
+	- Worse for python & python IDEs
+	- Students who haven't used terminal
+	- Avoid copy/paste loops / context-switching
+	- Normalize Mistakes / error messages
+	- Make it less scary
+- Use as a gentle first exposure to a computing language
+	- R-Bootcamp
+- Provide feedback in early exercises
+	- `gradethis`
+	- leverage previous lessons
+
+# Use it for Active Learning 
+
+## Active Learning
+
+- In revealJS slides (faded exercise design)
+	- Keep it simple
+- Inquiry based learning 
+	- tailor experience to language
+	- Modify code / Change parameters in an analysis
+- Data Snacks (show what's possible)
+ 
+## Model Meta-learning
+
+- Help learners explore documentation
+- Help 
+
+## Exercise
+
+Look at the `arrange()` documentation below. Take a look at the examples.
+
+```{webr}
+#| output: true
+#| autorun: true
+?arrange
+```
+
+How do we change the below code to sort by descending order?
+
+```{webr}
+#| exercise: ex_2
+#| setup: true
+library(palmerpenguins)
+library(dplyr)
+```
+
+```{webr}
+#| exercise: ex_2
+penguins |>
+    arrange(body_mass_g)
+```
+
+::: {.solution exercise="ex_2"}
+#### Solution
+
+Use the `desc()` function.
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+penguins |>
+    arrange(desc(body_mass_g))
+```
+:::
+
+## [Data Snacks](https://hutchdatascience.org/data_snacks/)
+
+- Show students what is possible
+
+
+
+# Use it for Social Learning
+
+## Social Learning
+
+- Encourage experimentation & collaboration
+	- code sharing of snippets & modify code
+	- improvise exercises to help learning
+- Use it for meta-learning 
+	- extending code by reading documentation
+- Make your own design decisions
+	- Better Tables
+- Compare approaches (two methods/two groups)
+	- Assess value of R/Python variable based on observable variable
+	- Use unique ids to tailor for each learner
+	- Students can compare solutions
+
+## Better Plots
+
+Experiment with the following modifications to the graph. If you have time, cut and paste the modifications you decided on in part 2 to your graph.
+
+If there's a show that you want to highlight, try adding an annotation to highlight it. Or try adding an annotation at `Roseanne`'s lowest rating!
+
+::::{.panel-tabset group="language"}
+## R
+
+```{webr}
+my_plot + 
+    labs(title = "Is it better to burn out than fade away?",x="Season Number", y="Average Rating") + 
+  geom_vline(xintercept = 5, lty=3) +
+  annotate(geom="text", x = 7, y=8.5, label = "The Walking\n Dead (brainzzz)") +
+  scale_x_continuous(breaks = c(1:10))
+
+```
+
+## Python
+
+```{pyodide}
+my_plot = sns.lineplot(data=tv_shows,
+                 x="seasonNumber",
+                 y="av_rating",
+                 hue="title")
+
+#my_plot.set_title("Is it better to burn out than fade away?", fontsize=20)
+#my_plot.set_xlabel ("Season Number", fontsize=15)
+#my_plot.set_ylabel ("Average Rating", fontsize=15)
+#my_plot.set_xticks(range(1,11))
+#plt.axhline(y=7.8, linestyle="--")
+#plt.text(x=7, y=8.5, s="The Walking\n Dead (brainzzz)")
+plt.show()
+```
+::::
+
+
+## Note: Summative Assessment
+
+- Using it for summative assessment is difficult
+	- Technically difficult 
+		- client side / source code is available in console
+	- Come talk to George if you want to do this
+
+# Getting Setup 
+
+## Getting Setup with WebR/Pyodide
+
+- Start a quarto project 
+- Install the quarto live plugin
+	- Can use in HTML documents
+	- Can use in revealJS presentations
+- YAML
+	- `webr`: packages
+	- `pyodide`: packages
+	- `resources`: files / folders
+- - Host quarto doc on a website
+
+## Possible Questions / Feedback
+
+- When do I move them to RStudio?
+- Different features - are there different types of learners that it would be helpful for?
+	- Adult learners
+	- Stages of learning - how to use WebR/Pyodide to support them
+- Help us understand how WebR addresses learning stages
+- Reducing friction is important to effective learning
+- Defining each educational concept
+	- Use a sentence to define what it means to you and how it relates to what you're talking about
+	- My own stamp on the concepts - what it means to me
+
+## How to get started 
+
+- Install the quarto-live extension
+- Use `format: live-html` or `format: live-revealjs`
+- Transform your code chunks
+	- `{r}` --> `{webr}`
+	- `{python}` --> `{pyodide}`
+
+## R -> WebR {auto-animate=true}
+
+```{{r}}
+data(iris)
+summary(iris)
+```
+## R -> WebR {auto-animate=true}
+
+```{{webr}}
+data(iris)
+summary(iris)
+```
+
+## R - WebR {auto-animate=true}
+
+```{webr}
+data(iris)
+summary(iris)
+```
+
+
+## Conclusion
+
+- 
+
+## Miscellaneous
+
+- Observable integration (have to know JS)
+- Hook up WebR / Pyodide to Observable
+		- Modern version of `crosstalk` - sliders and boxes
+		- Reactive experience
+
+## Next Steps
+
+- Closer to delivery of the talk
+- Draft Slides & Visuals / Framework
+	- Take outline and have a running column
+- Narrative
+- How am I going to say this?
+- Deliver ~7 minutes of your talk
+
+
+
+## What is Quarto Live?
+
+```{webr}
+data(iris)
+summary(iris)
+```
+
