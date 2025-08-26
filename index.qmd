@@ -3,7 +3,9 @@ title: Degrees of Freedom
 subtitle: Empower learners with Quarto, WebR, and Pyodide
 author: Ted Laderas, PhD
 engine: knitr
-format: live-revealjs
+format: 
+    live-revealjs:
+        incremental: true
 resources:
     - data
 pyodide:
@@ -14,10 +16,18 @@ webr:
     render-df: paged-table
     packages:
       - gradethis
+      - readr
       - dplyr
       - ggplot2
       - palmerpenguins
 ---
+
+## First Things First
+
+- Do you want to increase active learning in your data science courses?
+    - Less blank stares?
+    - More discussion?
+    - More interaction?
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 {{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
@@ -44,80 +54,85 @@ import matplotlib.pyplot as plt
 tv_shows = pd.read_csv("data/tv_shows.csv")
 ```
 
-## Introduction
-
-- Director of Training and Community for the [Data Science Lab at Fred Hutch Cancer Center](https://hutchdatascience.org)
-- Teach a wide variety of workforce learners
-- Passionate about evidence-based pedagogy and technology
-
-## First Things First
-
-- Do you want to increase active learning in your data science courses?
-    - Less blank stares?
-    - More discussion?
-    - More interaction?
-
-# Introducing Web Assembly
-## R/Python in your browser
+## Introducing WebR/Pyodide
 
 ```{webr}
 data(iris)
 summary(iris)
 ```
 
-## Why use WebR/Pyodide?
+## WebR/Pyodide can Help
 
-By using WebR/Pyodide/Quarto to:
-
-- lower cognitive load, 
-- encourage active learning, 
-- and increase social learning, 
-
-you engage students to explore R and Python, which results in more effective data science skill development at all stages in their learning.
+- Lower cognitive load 
+- Encourage active learning 
+- Increase social learning 
 
 # Lower Cognitive Load
 
-## What is Cognitive Load?
+## Thoughts in a Learner's Brain {.auto-animate}
 
-- Our working memory is a bottleneck; only able to manage 4+/-2 items at once
-- More than than that, we get overwhelmed
-- Delivery of learning materials depends on managing working memory
-- Instructional design is about reducing complexity and eliminating extraneous details
+- What is R actually?
+- Variable? What's that?
+- Need to finish that report...
+- Got to pick up my daughter in an hour
+- Am I doing this right?
+- RStudio? OMG, I don't get it
 
-## A step before RStudio / VSCode
+## What can we help with?
 
-Lots of cognitive load before we even get started!
-
-- Using the console is intimidating
-- Installing R/RStudio without guidance
-- RStudio Interface is overwhelming
-- `install.packages()`
-- **Fear of doing something wrong**
+::: {.nonincremental}
+- **What is R actually?**
+- **Variable? What's that?**
+- *Need to finish that report...*
+- *Got to pick up my daughter in an hour*
+- ~~Am I doing this right?~~
+- ~~RStudio? OMG, I don't get it~~
+:::
 
 ## Fear is Part of Cognitive Load
 
-Everything we can do to alleviate fear, the less cognitive load learners will have.
+> ~~Am I Doing this Right?~~
 
-## RStudio / VSCode can be overwhelming
+- Fear of doing something wrong
+- Everything we can do to alleviate fear, the less cognitive load learners will have.
 
-- Context switching adds to the friction
+## RStudio / Positron Overwhelm {.nonincremental}
 
 ![](rstudio.jpg)
 
 ## Lower Friction for New Learners
 
-- Imagine you are brand new to working with programming.
+- Imagine you are brand new to working with programming
 - Imagine this is your first interaction with R or Python
 
 ## Exercise (Python)
 
-Run the code chunk below by clicking "run code". 
+Run the code chunk below by clicking "Run code". 
 
 Before you run it, what do you expect to see?
 
 ```{pyodide}
 2 + 2
 ```
+
+## What's Next?
+
+- [x] Follow up with session on RStudio / Positron / VSCode
+- [x] Have them work in Quarto
+- [x] Use WebR/Pyodide for in-class exercises
+
+# Use it for Active Learning 
+
+## What is Active Learning?
+
+- Learning by doing
+- Activities that support and cement knowledge by application
+
+## Active Learning
+
+- Feedback 
+- Inquiry based learning 
+	- Model metalearning
 
 ## Providing Encouragement using `{gradethis}`
 
@@ -160,31 +175,6 @@ penguins |>
 #| check: true
 gradethis::grade_this_code()
 ```
-
-## What's Next?
-
-- [x] Follow up with session on RStudio / Positron / VSCode
-- [x] Have them work in Quarto
-- [x] Use WebR/Pyodide for in-class exercises
-
-# Use it for Active Learning 
-
-## What is Active Learning?
-
-- Learning by doing
-- Activities that support and cement knowledge by application
-
-## Active Learning
-
-- Faded exercise design
-- Inquiry based learning 
-	- Model metalearning
-
-## Faded Exercise Design
-
-1. Fill in the blanks
-2. More blanks
-3. On their own
 
 ## Model Meta-learning
 
@@ -229,6 +219,7 @@ penguins |>
 #| check: true
 gradethis::grade_this_code()
 ```
+
 # Use it for Social Learning
 
 ## Social Learning {.incremental}
@@ -293,14 +284,7 @@ plt.show()
 
 ## [Data Snacks](https://hutchdatascience.org/data_snacks/)
 
-::::{.columns}
-:::{.column}
-- Show students what is possible
-:::
-:::{.column}
 ![](datasnack.jpg)
-:::
-::::
 
 ## Note: Summative Assessment
 
@@ -314,12 +298,12 @@ plt.show()
 ## Getting Setup
 
 - Start a quarto project
-```
+```bash
 quarto create website my_project
 ```
 
 - Install the quarto live plugin
-```
+```bash
 quarto add r-wasm/quarto-live
 ```
 
@@ -354,6 +338,9 @@ webr:
 ---
 ```
 
+- `render-df` - how to render tables
+- `packages` - put packages here
+
 ## Front matter (Pyodide) {auto-animate=true}
 
 ```yaml
@@ -368,34 +355,69 @@ pyodide:
         - seaborn
 ---
 ```
-	- `pyodide`: packages
+
+- `packages`: packages
 
 
 ## Transform your code chunks
 
-	- `{r}` --> `{webr}`
-	- `{python}` --> `{pyodide}`
+- `{r}` --> `{webr}`
+- `{python}` --> `{pyodide}`
 
-## R -> WebR {auto-animate=true}
+## Transform those chunks {auto-animate=true}
 
+::::{.panel-tabset group="language"}
+
+## R
 ```{{r}}
-data(iris)
-summary(iris)
+library(readr)
+data <- read_csv("data/cereal.csv")
+summary(data)
 ```
-## R -> WebR {auto-animate=true}
+## Python
+```{{python}}
+import pandas as pd
+data = pd.read_csv("data/cereal.csv")
+data.info()
+```
 
+::::
+
+## WebR/Pyodide {auto-animate=true}
+
+::::{.panel-tabset group="language"}
+
+## R
 ```{{webr}}
-data(iris)
-summary(iris)
+library(readr)
+data <- read_csv("data/cereal.csv")
+summary(data)
 ```
+## Python
+```{{pyodide}}
+import pandas as pd
+data = pd.read_csv("data/cereal.csv")
+data.info()
+```
+::::
 
-## R - WebR {auto-animate=true}
+## Now Executable! {auto-animate=true}
 
+::::{.panel-tabset group="language"}
+## R
 ```{webr}
-data(iris)
-summary(iris)
+library(readr)
+data <- read_csv("data/cereal.csv")
+summary(data)
 ```
 
+## Python
+```{pyodide}
+import pandas as pd
+data = pd.read_csv("data/cereal.csv")
+data.info()
+```
+::::
 
 ## Conclusion
 
