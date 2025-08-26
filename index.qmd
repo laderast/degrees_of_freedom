@@ -138,7 +138,6 @@ Before you run it, what do you expect to see?
 
 - Giving feedback is important
 - Focus attention to reduce fear
-- [`{pygradethis}`](https://github.com/rstudio/pygradethis) is in progress
 
 ## Exercise with feedback
 
@@ -288,7 +287,7 @@ plt.show()
 
 ## Note: Summative Assessment
 
-- Using it for summative assessment is difficult
+- Using WebR/Pyodide for summative assessment is difficult
 	- Technically difficult 
 		- client side / source code is available in console
 	- Come talk to George if you want to do this
@@ -422,6 +421,13 @@ data.info()
 ## Conclusion
 
 - 
+
+## Resources
+
+- [This Talk](https://github.com/laderast/degress_of_freedom)
+- [RBootcamp](https://r-bootcamp.netlify.app)
+- [Data Snacks](https://hutchdatascience.org/data_snacks/)
+
 
 ## Miscellaneous
 
