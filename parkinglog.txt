@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+format: html
+---
+
+## Exercise with feedback
+
+How would I find the `distinct()` `species` in penguins?
+
+```{webr}
+#| exercise: ex_1
+#| setup: true
+library(palmerpenguins)
+library(dplyr)
+```
+
+```{webr}
+#| exercise: ex_1
+penguins |>
+   _______(species)
+```
+
+::: {.solution exercise="ex_1"}
+#### Solution
+
+Use the `distinct()` function.
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+penguins |> 
+    distinct(species)
+```
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_this_code()
+```
