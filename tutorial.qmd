@@ -1,0 +1,137 @@
+---
+title: "Untitled"
+format: html
+---
+
+# Getting Setup with WebR/Pyodide
+
+## Getting Setup
+
+- Start a quarto project
+```bash
+quarto create website my_project
+```
+
+- Install the quarto live plugin
+```bash
+quarto add r-wasm/quarto-live
+```
+
+## Front matter {auto-animate=true}
+
+```yaml
+---
+engine: knitr
+format: live-revealjs
+resources:
+    - data
+---
+```
+
+- `format: live-revealjs` or `format: live-html`
+- `resources:` - specify a folder or file in your repository to include
+
+## Front matter (WebR) {auto-animate=true}
+
+```yaml
+---
+engine: knitr
+format: live-revealjs
+resources:
+    - data
+webr:
+    render-df: paged-table
+    packages:
+      - gradethis
+      - dplyr
+      - ggplot2
+      - palmerpenguins
+---
+```
+
+- `render-df` - how to render tables
+- `packages` - put packages here
+
+## Front matter (Pyodide) {auto-animate=true}
+
+```yaml
+---
+engine: knitr
+format: live-revealjs
+resources:
+    - data
+pyodide:
+    packages:
+        - pandas
+        - seaborn
+---
+```
+
+- `packages`: packages
+
+## Includes
+
+```markdown
+{{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}}
+{{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}}
+```
+
+## Transform your code chunks
+
+- `{r}` --> `{webr}`
+- `{python}` --> `{pyodide}`
+
+## Transform those chunks {auto-animate=true}
+
+::::{.panel-tabset group="language"}
+
+## R
+```{{r}}
+library(readr)
+data <- read_csv("data/cereal.csv")
+summary(data)
+```
+## Python
+```{{python}}
+import pandas as pd
+data = pd.read_csv("data/cereal.csv")
+data.info()
+```
+
+::::
+
+## WebR/Pyodide {auto-animate=true}
+
+::::{.panel-tabset group="language"}
+
+## R
+```{{webr}}
+library(readr)
+data <- read_csv("data/cereal.csv")
+summary(data)
+```
+## Python
+```{{pyodide}}
+import pandas as pd
+data = pd.read_csv("data/cereal.csv")
+data.info()
+```
+::::
+
+## Now Executable! {auto-animate=true}
+
+::::{.panel-tabset group="language"}
+## R
+```{webr}
+library(readr)
+data <- read_csv("data/cereal.csv")
+summary(data)
+```
+
+## Python
+```{pyodide}
+import pandas as pd
+data = pd.read_csv("data/cereal.csv")
+data.info()
+```
+::::

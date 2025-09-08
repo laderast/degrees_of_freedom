@@ -122,45 +122,11 @@ data.info()
 ## Lower Friction for New Learners
 
 - Imagine you are brand new to working with programming
-- Imagine this is your first interaction with R or Python
-
-## Exercise (Python)
-
-Run the code chunk below by clicking "Run code". 
-
-Before you run it, what do you expect to see?
-
-```{pyodide}
-2 + 2
-```
-
-## What's Next?
-
-- [x] Follow up with session on RStudio / Positron / VSCode
-- [x] Have them work in Quarto on Posit.cloud
-- [x] Use WebR/Pyodide for in-class exercises
-
-# Increase Active Learning 
-
-## What is Active Learning?
-
-- Learning by doing
-- Activities that support and cement knowledge by application
-
-## Supporting Active Learning
-
-- Feedback 
-- Metalearning
-
-## Providing Encouragement using `{gradethis}`
-
-- Giving feedback is important
-- Focus attention to reduce fear
+- Feedback is important
 
 ## Exercise {.smaller}
 
 + Filter `biopics` so that it only shows `Criminal` movies (you'll have to use the `type_of_subject` variable in `biopics`. 
-+ Show how many rows are left using `nrow(crimeMovies)`.
 
 ```{webr}
 #| exercise: ex_3
@@ -168,7 +134,7 @@ Before you run it, what do you expect to see?
 crimeMovies <- filter(biopics, type_of_subject == "_______")
 
 #show number of crime movies
-nrow(_______)
+nrow(crimeMovies)
 ```
 
 ::: { .solution exercise="ex_3"}
@@ -191,6 +157,23 @@ nrow(crimeMovies)
 #| check: true
 gradethis::grade_this_code()
 ```
+
+## What's Next?
+
+- [x] Follow up with session on RStudio / Positron / VSCode
+- [x] Have them work in Quarto on Posit.cloud
+- [x] Use WebR/Pyodide for in-class exercises
+
+# Increase Active Learning 
+
+## What is Active Learning?
+
+- Learning by doing
+- Activities that cement knowledge by application
+
+## Supporting Active Learning
+
+- Metalearning
 
 ## Model Meta-learning
 
@@ -240,10 +223,11 @@ gradethis::grade_this_code()
 
 ## What is Social Learning?
 
+- Learning is a cognitive process with social context
 - We learn better when we learn together
 - Discussion with your neighbor 
 
-## Social Learning {.incremental}
+## WebR/Pyodide for Social Learning {.incremental}
 
 - Make your own design decisions
 	- Better Tables
@@ -261,7 +245,9 @@ gradethis::grade_this_code()
 - Sharing styling code with each other
 :::
 :::{.column}
+:::{.fragment}
 ![https://wifflegif.com/gifs/477310-making-mr-right-sneak-peek-gif](paperdoll.webp)
+:::
 :::
 ::::
 
@@ -314,130 +300,6 @@ plt.show()
 		- client side / source code is available in console
 	- Come talk to George if you want to do this
 
-# Getting Setup with WebR/Pyodide
-
-## Getting Setup
-
-- Start a quarto project
-```bash
-quarto create website my_project
-```
-
-- Install the quarto live plugin
-```bash
-quarto add r-wasm/quarto-live
-```
-
-## Front matter {auto-animate=true}
-
-```yaml
----
-engine: knitr
-format: live-revealjs
-resources:
-    - data
----
-```
-- `format: live-revealjs` or `format: live-html`
-- `resources:` - specify a folder or file in your repository to include
-
-## Front matter (WebR) {auto-animate=true}
-
-```yaml
----
-engine: knitr
-format: live-revealjs
-resources:
-    - data
-webr:
-    render-df: paged-table
-    packages:
-      - gradethis
-      - dplyr
-      - ggplot2
-      - palmerpenguins
----
-```
-
-- `render-df` - how to render tables
-- `packages` - put packages here
-
-## Front matter (Pyodide) {auto-animate=true}
-
-```yaml
----
-engine: knitr
-format: live-revealjs
-resources:
-    - data
-pyodide:
-    packages:
-        - pandas
-        - seaborn
----
-```
-
-- `packages`: packages
-
-## Transform your code chunks
-
-- `{r}` --> `{webr}`
-- `{python}` --> `{pyodide}`
-
-## Transform those chunks {auto-animate=true}
-
-::::{.panel-tabset group="language"}
-
-## R
-```{{r}}
-library(readr)
-data <- read_csv("data/cereal.csv")
-summary(data)
-```
-## Python
-```{{python}}
-import pandas as pd
-data = pd.read_csv("data/cereal.csv")
-data.info()
-```
-
-::::
-
-## WebR/Pyodide {auto-animate=true}
-
-::::{.panel-tabset group="language"}
-
-## R
-```{{webr}}
-library(readr)
-data <- read_csv("data/cereal.csv")
-summary(data)
-```
-## Python
-```{{pyodide}}
-import pandas as pd
-data = pd.read_csv("data/cereal.csv")
-data.info()
-```
-::::
-
-## Now Executable! {auto-animate=true}
-
-::::{.panel-tabset group="language"}
-## R
-```{webr}
-library(readr)
-data <- read_csv("data/cereal.csv")
-summary(data)
-```
-
-## Python
-```{pyodide}
-import pandas as pd
-data = pd.read_csv("data/cereal.csv")
-data.info()
-```
-::::
 
 ## Conclusion
 
