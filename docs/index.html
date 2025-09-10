@@ -6,10 +6,10 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-2b3e328b71be8d25427581baeb23079b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="index_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.7.30">
 
   <meta name="author" content="Ted Laderas, PhD">
   <title>Degrees of Freedom</title>
@@ -97,7 +97,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-4b7f179142f17ca251a37dc34c50596b.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-29b1b0ecd423a1a0271875d0fbd25940.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -227,7 +227,7 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjp0cnVlLCJvdXRwdXQiOmZhbHNlfSwiY29kZSI6Indl
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxudHZfc2hvd3MgPC0gcmVhZC5jc3YoXCJkYXRhL3R2X3Nob3dzLmNzdlwiKVxubXlfcGxvdCA8LSBcbiAgZ2dwbG90KHR2X3Nob3dzKSArIFxuICBhZXMoeCA9IHNlYXNvbk51bWJlciwgeT0gYXZfcmF0aW5nLCBncm91cD10aXRsZSwgXG4gICAgICBjb2xvciA9IHRpdGxlKSArIFxuICBnZW9tX2xpbmUoKVxuXG5saWJyYXJ5KGZpdmV0aGlydHllaWdodClcbmRhdGEoYmlvcGljcylcbmJpb3BpY3MkY291bnRyeSA8LSBmYWN0b3IoYmlvcGljcyRjb3VudHJ5KVxubGlicmFyeShrbml0cikifQ==
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxudHZfc2hvd3MgPC0gcmVhZC5jc3YoXCJkYXRhL3R2X3Nob3dzLmNzdlwiKVxubXlfcGxvdCA8LSBcbiAgZ2dwbG90KHR2X3Nob3dzKSArIFxuICBhZXMoeCA9IHNlYXNvbk51bWJlciwgeT0gYXZfcmF0aW5nLCBncm91cD10aXRsZSwgXG4gICAgICBjb2xvciA9IHRpdGxlKSArIFxuICBnZW9tX2xpbmUoKSJ9
 </script>
 </div>
 </div>
@@ -242,16 +242,18 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 </div>
 </div>
 </section>
-<section id="first-things-first" class="slide level2">
-<h2>First Things First</h2>
+<section id="i-did-poorly-as-an-educator" class="slide level2">
+<h2>I [did poorly] as an educator</h2>
 <ul>
-<li class="fragment">Do you want to increase active learning in your data science courses?
-<ul>
-<li class="fragment">Less blank stares?</li>
-<li class="fragment">More discussion?</li>
-<li class="fragment">More interaction?</li>
-</ul></li>
+<li class="fragment">R Class for workforce training</li>
+<li class="fragment">RStudio was overwhelming for a learner</li>
+<li class="fragment">They quit the course</li>
 </ul>
+</section>
+<section>
+<section id="what-could-have-made-the-experience-better" class="title-slide slide level1 center">
+<h1>What could have made the experience better?</h1>
+
 </section>
 <section id="introducing-webrpyodide" class="slide level2">
 <h2>Introducing WebR/Pyodide</h2>
@@ -292,14 +294,16 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <li class="fragment">Encourage active learning</li>
 <li class="fragment">Increase social learning</li>
 </ul>
-</section>
+</section></section>
 <section>
 <section id="lower-cognitive-load" class="title-slide slide level1 center">
 <h1>Lower Cognitive Load</h1>
 
 </section>
-<section id="thoughts-in-a-learners-brain" class="slide level2 auto-animate">
+<section id="thoughts-in-a-learners-brain" class="slide level2">
 <h2>Thoughts in a Learner’s Brain</h2>
+<div class="columns">
+<div class="column">
 <ul>
 <li class="fragment">What is R actually?</li>
 <li class="fragment">Variable? What’s that?</li>
@@ -308,9 +312,16 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <li class="fragment">Am I doing this right?</li>
 <li class="fragment">RStudio? OMG, I don’t get it</li>
 </ul>
+</div><div id="vcenter" class="column">
+<div class="fragment">
+<p><strong>This is all cognitive load</strong></p>
+</div>
+</div></div>
 </section>
 <section id="what-can-we-help-with" class="slide level2">
 <h2>What can we help with?</h2>
+<div class="columns">
+<div class="column">
 <ul>
 <li><strong>What is R actually?</strong></li>
 <li><strong>Variable? What’s that?</strong></li>
@@ -319,6 +330,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <li><del>Am I doing this right?</del></li>
 <li><del>RStudio? OMG, I don’t get it</del></li>
 </ul>
+</div><div class="column">
+
+</div></div>
 </section>
 <section id="fear-is-part-of-cognitive-load" class="slide level2">
 <h2>Fear is Part of Cognitive Load</h2>
@@ -338,21 +352,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <h2>Lower Friction for New Learners</h2>
 <ul>
 <li class="fragment">Imagine you are brand new to working with programming</li>
-<li class="fragment">Feedback is important</li>
+<li class="fragment">Feedback is important (currently only for R)</li>
 </ul>
 </section>
 <section id="exercise" class="slide level2 smaller">
 <h2>Exercise</h2>
 <ul>
-<li class="fragment">Filter <code>biopics</code> so that it only shows <code>Criminal</code> movies (you’ll have to use the <code>type_of_subject</code> variable in <code>biopics</code>.</li>
+<li class="fragment">Filter <code>penguins</code> so that it only shows penguins from the <code>island</code> of <code>Biscoe</code> (you’ll have to use the <code>island</code> variable). Assign it to <code>biscoe_penguins</code>.</li>
 </ul>
+<div class="fragment">
 <div class="cell" data-exercise="ex_3">
 <div>
 <div id="webr-6" class="exercise-cell">
 
 </div>
 <script type="webr-6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMyJ9LCJjb2RlIjoiI2FkZCB5b3VyIGZpbHRlciBzdGF0ZW1lbnQgaGVyZVxuY3JpbWVNb3ZpZXMgPC0gZmlsdGVyKGJpb3BpY3MsIHR5cGVfb2Zfc3ViamVjdCA9PSBcIl9fX19fX19cIilcblxuI3Nob3cgbnVtYmVyIG9mIGNyaW1lIG1vdmllc1xubnJvdyhjcmltZU1vdmllcykifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMyJ9LCJjb2RlIjoiI2FkZCB5b3VyIGZpbHRlciBzdGF0ZW1lbnQgaGVyZVxuYmlzY29lX3Blbmd1aW5zIDwtIGZpbHRlcihwZW5ndWlucywgaXNsYW5kID09IFwiX19fX19fX19cIilcblxuI3Nob3cgbnVtYmVyIG9mIGNyaW1lIG1vdmllc1xubnJvdyhiaXNjb2VfcGVuZ3VpbnMpIn0=
 </script>
 </div>
 </div>
@@ -369,15 +384,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMyJ9LCJjb2RlIjoi
 <div class="cell" data-exercise="ex_3" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
 <code id="interpolate-8" class="solution-code d-none">#add your filter statement here
-crimeMovies &lt;- filter(biopics, type_of_subject == "Criminal")
+biscoe_penguins &lt;- filter(penguins, island == "Biscoe")
 
 #show number of crime movies
-nrow(crimeMovies)</code>
+nrow(biscoe_penguins)</code>
 <div class="sourceCode cell-code" id="interpolate-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="interpolate-9-1"><a href="#interpolate-9-1"></a><span class="co">#add your filter statement here</span></span>
-<span id="interpolate-9-2"><a href="#interpolate-9-2"></a>crimeMovies <span class="ot">&lt;-</span> <span class="fu">filter</span>(biopics, type_of_subject <span class="sc">==</span> <span class="st">"Criminal"</span>)</span>
+<span id="interpolate-9-2"><a href="#interpolate-9-2"></a>biscoe_penguins <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins, island <span class="sc">==</span> <span class="st">"Biscoe"</span>)</span>
 <span id="interpolate-9-3"><a href="#interpolate-9-3"></a></span>
 <span id="interpolate-9-4"><a href="#interpolate-9-4"></a><span class="co">#show number of crime movies</span></span>
-<span id="interpolate-9-5"><a href="#interpolate-9-5"></a><span class="fu">nrow</span>(crimeMovies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-9-5"><a href="#interpolate-9-5"></a><span class="fu">nrow</span>(biscoe_penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -388,6 +403,7 @@ nrow(crimeMovies)</code>
 <script type="exercise-check-ex_3-contents">
 eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzMifSwiY29kZSI6ImdyYWRldGhpczo6Z3JhZGVfdGhpc19jb2RlKCkifQ==
 </script>
+</div>
 </div>
 </section>
 <section id="whats-next" class="slide level2">
@@ -407,13 +423,10 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 <h2>What is Active Learning?</h2>
 <ul>
 <li class="fragment">Learning by doing</li>
-<li class="fragment">Activities that cement knowledge by application</li>
-</ul>
-</section>
-<section id="supporting-active-learning" class="slide level2">
-<h2>Supporting Active Learning</h2>
+<li class="fragment">Activities that cement knowledge by application
 <ul>
-<li class="fragment">Metalearning</li>
+<li class="fragment">Meta-learning</li>
+</ul></li>
 </ul>
 </section>
 <section id="model-meta-learning" class="slide level2">
@@ -425,8 +438,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 </section>
 <section id="exercise-r" class="slide level2 smaller">
 <h2>Exercise (R)</h2>
-<p>Look at the <a href="https://dplyr.tidyverse.org/reference/arrange.html">documentation for <code>arrange()</code></a>. Take a look at the examples.</p>
-<p>How do we change the below code to sort by descending order?</p>
+<ul>
+<li class="fragment"><p>Look at the <a href="https://dplyr.tidyverse.org/reference/arrange.html">documentation for <code>arrange()</code></a>. Take a look at the examples.</p></li>
+<li class="fragment"><p>How do we change the below code to sort by descending order?</p></li>
+</ul>
+<div class="fragment">
 <div class="cell" data-exercise="ex_2" data-setup="true">
 <script type="exercise-setup-ex_2-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiIsInNldHVwIjp0cnVlfSwiY29kZSI6ImxpYnJhcnkocGFsbWVycGVuZ3VpbnMpXG5wZW5ndWlucyA8LSBwZW5ndWluc1sxOjYsXVxubGlicmFyeShkcGx5cikifQ==
@@ -457,6 +473,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoi
 <script type="exercise-check-ex_2-contents">
 eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzIifSwiY29kZSI6ImdyYWRldGhpczo6Z3JhZGVfdGhpc19jb2RlKCkifQ==
 </script>
+</div>
 </div>
 </section></section>
 <section>
@@ -490,7 +507,6 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 <div class="columns">
 <div class="column">
 <ul>
-<li class="fragment">Workshop about design principles for plots in R and Python</li>
 <li class="fragment">Take a Paper Doll approach to improving plots</li>
 <li class="fragment">Design in in the eye of the beholder
 <ul>
@@ -499,13 +515,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 <li class="fragment">Sharing styling code with each other</li>
 </ul>
 </div><div class="column">
-<div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="paperdoll.webp"></p>
+<p><img data-src="paperdoll.gif"></p>
 <figcaption>https://wifflegif.com/gifs/477310-making-mr-right-sneak-peek-gif</figcaption>
 </figure>
-</div>
 </div>
 </div></div>
 </section>
@@ -572,17 +586,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfcGxvdCA9IHNucy5saW5l
 <section id="resources-thanks" class="slide level2">
 <h2>Resources / Thanks!</h2>
 <ul>
-<li class="fragment"><p>George Stagg for all his work on WebR/Quarto Live and for the chat</p></li>
+<li class="fragment"><p>George Stagg for all his work on WebR/Quarto Live and for tips</p></li>
 <li class="fragment"><p><a href="https://github.com/laderast/degress_of_freedom">This Talk</a></p></li>
 <li class="fragment"><p><a href="https://r-bootcamp.netlify.app">RBootcamp</a></p></li>
 <li class="fragment"><p><a href="https://hutchdatascience.org/data_snacks/">Data Snacks</a></p></li>
-</ul>
-</section>
-<section id="miscellaneous" class="slide level2">
-<h2>Miscellaneous</h2>
-<ul>
-<li class="fragment">Observable integration (have to know JS)</li>
-<li class="fragment">Hook up WebR / Pyodide to Observable - Modern version of <code>crosstalk</code> - sliders and boxes - Reactive experience</li>
 </ul>
 
 <script type="webr-data">
@@ -608,7 +615,6 @@ WyJkYXRhL3R2X3Nob3dzLmNzdiIsImRhdGEvbWFzY290cy5jc3YiLCJkYXRhL3R2X3Nob3dzX2xhcmdl
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="owl-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
@@ -663,7 +669,7 @@ WyJkYXRhL3R2X3Nob3dzLmNzdiIsImRhdGEvbWFzY290cy5jc3YiLCJkYXRhL3R2X3Nob3dzX2xhcmdl
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
