@@ -183,11 +183,13 @@ gradethis::grade_this_code()
 :::
 ::::
 
-## What's Next?
+## In-Class Exercise Design Considerations
 
-- [x] Follow up with session on RStudio / Positron / VSCode
-- [x] Have them work in Quarto on Posit.cloud
-- [x] Use WebR/Pyodide for in-class exercises
+- [x] Have all information available
+- [x] Reduce friction with practicing
+- [x] Use faded exercise design
+
+
 
 # Increase Active Learning 
 
@@ -248,7 +250,7 @@ gradethis::grade_this_code()
 ## Active Learning
 
 - WebR/Pyodide is excellent at this
-- Use as part of lessons
+- Use as part of lectures for practice
 
 # Increase Social Learning
 
@@ -322,13 +324,20 @@ plt.show()
 
 ![](datasnack.jpg)
 
+## What's Next?
+
+WebR/Pyodide is part of a technology spectrum
+
+- [x] Follow up with session on RStudio / Positron / VSCode
+- [x] Have them work in Quarto on Posit.cloud
+- [x] Use WebR/Pyodide for in-class exercises
+
 ## Note: Summative Assessment
 
 - Using WebR/Pyodide for summative assessment is difficult
 	- Technically difficult 
 		- client side / source code is available in console
 	- Come talk to George if you want to do this
-
 
 ## Conclusion
 
