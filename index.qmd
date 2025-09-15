@@ -189,8 +189,6 @@ gradethis::grade_this_code()
 - [x] Reduce friction with practicing
 - [x] Use faded exercise design
 
-
-
 # Increase Active Learning 
 
 ## What is Active Learning?
@@ -351,6 +349,7 @@ WebR/Pyodide is a powerful technology that can help you to:
 
 - George Stagg for all his work on WebR/Quarto Live and for tips
 
+- [Data Science Lab](https://hutchdatascience.org)
 - [This Talk](https://github.com/laderast/degress_of_freedom)
 - [RBootcamp](https://r-bootcamp.netlify.app)
 - [Data Snacks](https://hutchdatascience.org/data_snacks/)
