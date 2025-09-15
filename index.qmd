@@ -132,7 +132,7 @@ data.info()
 ## Lower Friction for New Learners
 
 - Imagine you are brand new to working with programming
-- Feedback is important (currently only for R)
+- Feedback is important 
 
 ## Exercise {.smaller}
 
@@ -147,8 +147,6 @@ biscoe_penguins <- filter(penguins, island == "________")
 #show number of crime movies
 nrow(biscoe_penguins)
 ```
-
-
 
 ::: { .solution exercise="ex_3"}
 ::: { .callout-tip collapse=false}
@@ -173,6 +171,17 @@ gradethis::grade_this_code()
 
 :::
 
+## R-Bootcamp {.nonincremental}
+
+::::{.columns}
+:::{.column}
+- [R-Bootcamp](https://r-bootcamp.netlify.app)
+- [Github Repo](https://github.com/laderast/rbootcamp)
+:::
+:::{.column}
+![](rbootcamp.png)
+:::
+::::
 
 ## What's Next?
 
@@ -236,6 +245,10 @@ gradethis::grade_this_code()
 
 :::
 
+## Active Learning
+
+- WebR/Pyodide is excellent at this
+- Use as part of lessons
 
 # Increase Social Learning
 
@@ -247,6 +260,7 @@ gradethis::grade_this_code()
 
 ## WebR/Pyodide for Social Learning {.incremental}
 
+- Paired programming exercises
 - Make your own design decisions
 	- Better Tables
 - Share packages for demos
