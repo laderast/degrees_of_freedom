@@ -1,0 +1,49 @@
+---
+title: "Exercise Design"
+format: live-html
+engine: knitr
+webr:
+    packages:
+      - gradethis
+      - readr
+      - dplyr
+      - ggplot2
+      - palmerpenguins
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
++ Filter `penguins` so that it only shows penguins from the `island` of `Biscoe` (you'll have to use the `island` variable). Assign it to `biscoe_penguins`.
+
+```{webr}
+#| exercise: ex_3
+#add your filter statement here
+biscoe_penguins <- filter(penguins, island == "________")
+
+#show number of penguins
+nrow(biscoe_penguins)
+```
+
+::: { .solution exercise="ex_3"}
+::: { .callout-tip collapse=false}
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+#add your filter statement here
+biscoe_penguins <- filter(penguins, island == "Biscoe")
+
+#show number of penguins
+nrow(biscoe_penguins)
+```
+:::
+:::
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+if(.result == 168) {
+    "Great Job! You got the filtering correct."
+}
+```

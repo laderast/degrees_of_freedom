@@ -7,5 +7,8 @@
   },
   "tutorial.qmd": {
     "tutorial.html": "4ab4751a"
+  },
+  "01-feedback-example.qmd": {
+    "01-feedback-example.html": "61dd1e8d"
   }
 }

@@ -100,8 +100,10 @@ With each step - increase learner autonomy and freedom
 
 :::{.fragment}
 ::: {layout="[[-1], [1], [-1]]"}
+::: {.larger}
 
 **Cognitive Load**
+:::
 
 :::
 :::
@@ -181,9 +183,45 @@ gradethis::grade_this_code()
 ## In-Class Exercise Design Considerations
 
 - [x] Have all information available
-- [x] Reduce friction with practicing
-- [x] Use faded exercise design
+- [x] Reduce friction when practicing
+- [x] Use [faded exercise design](https://teachtogether.tech/en/#s:architecture-load)
 - [x] Use custom grading functions to evaluate codeblocks
+
+## Custom Grading Functions
+
+- Anticipate possible mistakes and answers
+- Have a response for each
+
+:::{.fragment}
+
+::::{.panel-tabset group="language"}
+## R
+```{{webr}}
+#| exercise: ex_1_r
+#| check: true
+if (identical(.result, mean(1:10))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "That's incorrect, sorry.")
+}
+```
+
+## Python
+```{{pyodide}}
+#| exercise: ex_1_py
+#| check: true
+n = range(1, 11)
+mean = sum(n)/len(n)
+feedback = None
+if (result == mean):
+  feedback = { "correct": True, "message": "Nice work!" }
+else:
+  feedback = { "correct": False, "message": "That's incorrect, sorry." }
+feedback
+```
+::::
+
+:::
 
 ## R-Bootcamp {.nonincremental}
 
@@ -355,11 +393,19 @@ WebR/Pyodide is a powerful technology that can help you to:
 - Increase Active Learning
 - Increase Social Learning
 
-## Resources / Thanks!
+As you give students more freedom, they become stronger learners
 
+## Resources / Thanks! {.nonincremental}
+::::{.columns}
+:::{.column}
 - George Stagg for all his work on WebR/Quarto Live and for tips
-
+- [tladera2 @ fredhutch.org](mailto:tladera2@fredhutch.org)
 - [Data Science Lab](https://hutchdatascience.org)
-- [This Talk](https://github.com/laderast/degress_of_freedom)
+:::
+:::{.column}
+- [Ted's Website](https://laderast.github.io)
+- [This Talk](https://github.com/laderast/degrees_of_freedom)
 - [RBootcamp](https://r-bootcamp.netlify.app)
 - [Data Snacks](https://hutchdatascience.org/data_snacks/)
+:::
+::::
