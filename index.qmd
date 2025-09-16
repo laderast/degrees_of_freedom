@@ -48,7 +48,7 @@ import matplotlib.pyplot as plt
 tv_shows = pd.read_csv("data/tv_shows.csv")
 ```
 
-## I [did poorly] as an educator
+## Doing badly as an educator
 
 - R Class for workforce training
 - RStudio was overwhelming for a learner
@@ -81,6 +81,8 @@ data.info()
 - Encourage active learning 
 - Increase social learning 
 
+With each step - increase learner autonomy and freedom
+
 # Lower Cognitive Load
 
 ## Thoughts in a Learner's Brain 
@@ -94,9 +96,14 @@ data.info()
 - Am I doing this right?
 - RStudio? OMG, I don't get it
 :::
-:::{.column #vcenter}
+:::{.column}
+
 :::{.fragment}
-**This is all cognitive load**
+::: {layout="[[-1], [1], [-1]]"}
+
+**Cognitive Load**
+
+:::
 :::
 :::
 ::::
@@ -171,6 +178,13 @@ gradethis::grade_this_code()
 
 :::
 
+## In-Class Exercise Design Considerations
+
+- [x] Have all information available
+- [x] Reduce friction with practicing
+- [x] Use faded exercise design
+- [x] Use custom grading functions to evaluate codeblocks
+
 ## R-Bootcamp {.nonincremental}
 
 ::::{.columns}
@@ -183,11 +197,7 @@ gradethis::grade_this_code()
 :::
 ::::
 
-## In-Class Exercise Design Considerations
 
-- [x] Have all information available
-- [x] Reduce friction with practicing
-- [x] Use faded exercise design
 
 # Increase Active Learning 
 
