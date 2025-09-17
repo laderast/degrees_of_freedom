@@ -429,5 +429,6 @@ As you give students more freedom, they become stronger learners
 - [This Talk](https://github.com/laderast/degrees_of_freedom)
 - [RBootcamp](https://r-bootcamp.netlify.app)
 - [Data Snacks](https://hutchdatascience.org/data_snacks/)
+- [Better Plots](https://better-plots.netlify.app/)
 :::
 ::::
