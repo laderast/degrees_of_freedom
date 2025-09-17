@@ -1,7 +1,10 @@
 ---
 title: Degrees of Freedom
 subtitle: Empower learners with Quarto, WebR, and Pyodide
-author: Ted Laderas, PhD
+author:
+  - name: Ted Laderas, PhD
+    affiliations:
+      - name: Data Science Lab, Fred Hutch Cancer Center
 engine: knitr
 format: 
     live-revealjs:
@@ -230,11 +233,6 @@ feedback
 
 :::
 
-::: {.fragment}
-::: aside
-[01-feedback-example](https://github.com/laderast/degrees_of_freedom/blob/main/01-feedback-example.qmd)
-:::
-:::
 
 ## R-Bootcamp {.nonincremental}
 
@@ -373,6 +371,7 @@ my_plot = sns.lineplot(data=tv_shows,
                  y="av_rating",
                  hue="title")
 
+my_plot.legend(loc='lower left')
 #my_plot.set_title("Is it better to burn out than fade away?", fontsize=20)
 #my_plot.set_xlabel ("Season Number", fontsize=15)
 #my_plot.set_ylabel ("Average Rating", fontsize=15)
