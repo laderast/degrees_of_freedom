@@ -4,7 +4,6 @@ format: live-html
 engine: knitr
 webr:
     packages:
-      - gradethis
       - readr
       - dplyr
       - ggplot2
@@ -12,7 +11,6 @@ webr:
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
 + Filter `penguins` so that it only shows penguins from the `island` of `Biscoe` (you'll have to use the `island` variable). Assign it to `biscoe_penguins`.
 
@@ -20,9 +18,7 @@ webr:
 #| exercise: ex_3
 #add your filter statement here
 biscoe_penguins <- filter(penguins, island == "________")
-
-#show number of penguins
-nrow(biscoe_penguins)
+biscoe_penguins
 ```
 
 ::: { .solution exercise="ex_3"}
@@ -33,17 +29,20 @@ nrow(biscoe_penguins)
 #| solution: true
 #add your filter statement here
 biscoe_penguins <- filter(penguins, island == "Biscoe")
-
-#show number of penguins
-nrow(biscoe_penguins)
+biscoe_penguins
 ```
 :::
 :::
 
+
 ```{webr}
 #| exercise: ex_3
 #| check: true
-if(.result == 168) {
-    "Great Job! You got the filtering correct."
+biscoe_penguins <- filter(penguins, island == "Biscoe")
+biscoe_penguins
+if(nrow(.result)==nrow(biscoe_penguins)){
+    list(correct = TRUE, message = "Correct! Great Job filtering!")
+} else{
+    list(correct = FALSE, message = "Try filtering with `island='Biscoe'`")
 }
 ```

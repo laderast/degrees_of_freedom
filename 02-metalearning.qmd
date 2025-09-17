@@ -1,0 +1,56 @@
+---
+title: "Metalearning"
+format: live-html
+engine: knitr
+webr:
+    packages:
+      - readr
+      - dplyr
+      - ggplot2
+      - palmerpenguins
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+## Exercise (R) {.smaller}
+
+- Look at the [documentation for `arrange()`](https://dplyr.tidyverse.org/reference/arrange.html). Take a look at the examples.
+
+- How do we change the below code to sort by descending order?
+
+:::{.fragment}
+```{webr}
+#| exercise: ex_2
+#| setup: true
+library(palmerpenguins)
+penguins <- penguins[1:6,]
+library(dplyr)
+```
+
+```{webr}
+#| exercise: ex_2
+penguins |>
+    arrange(body_mass_g)
+```
+
+::: {.solution exercise="ex_2"}
+#### Solution
+
+Use the `desc()` function.
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+penguins |>
+    arrange(desc(body_mass_g))
+```
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+gradethis::grade_this_code()
+```
+
+:::

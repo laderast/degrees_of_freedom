@@ -1,0 +1,80 @@
+---
+title: "Better Plots"
+engine: knitr
+format: live-html
+resources:
+    - data
+pyodide:
+    packages:
+        - pandas
+        - seaborn
+webr:
+    render-df: paged-table
+    packages:
+      - gradethis
+      - readr
+      - dplyr
+      - ggplot2
+      - palmerpenguins
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| autorun: true
+#| echo: false
+library(ggplot2)
+library(dplyr)
+tv_shows <- read.csv("data/tv_shows.csv")
+my_plot <- 
+  ggplot(tv_shows) + 
+  aes(x = seasonNumber, y= av_rating, group=title, 
+      color = title) + 
+  geom_line()
+```
+
+```{pyodide}
+#| autorun: true
+#| echo: false
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+tv_shows = pd.read_csv("data/tv_shows.csv")
+```
+
+
+Experiment with adding or removing to the graph, adding your own annotations.
+
+If there's a show that you want to highlight, try adding an annotation to highlight it. Or try adding an annotation at Roseanne's lowest rating!
+
+::::{.panel-tabset group="language"}
+## R
+
+```{webr}
+my_plot + 
+    labs(title = "Is it better to burn out than fade away?",
+         x="Season Number", y="Average Rating") + 
+  geom_vline(xintercept = 5, lty=3) +
+ # annotate(geom="text", x = 7, y=8.5, 
+ #         label = "The Walking\n Dead (brainzzz)") +
+  scale_x_continuous(breaks = c(1:10))
+```
+
+## Python
+
+```{pyodide}
+my_plot = sns.lineplot(data=tv_shows,
+                 x="seasonNumber",
+                 y="av_rating",
+                 hue="title")
+
+#my_plot.set_title("Is it better to burn out than fade away?", fontsize=20)
+#my_plot.set_xlabel ("Season Number", fontsize=15)
+#my_plot.set_ylabel ("Average Rating", fontsize=15)
+#my_plot.set_xticks(range(1,11))
+#plt.axhline(y=7.8, linestyle="--")
+#plt.text(x=7, y=8.5, s="The Walking\n Dead (brainzzz)")
+plt.show()
+```
+::::
+
