@@ -7,6 +7,7 @@ format:
     live-revealjs:
         incremental: true
         slide-number: true
+        footer: "[https://tinyurl.com/degfree](https://tinyurl.com/degfree)"
 resources:
     - data
 pyodide:
@@ -48,13 +49,13 @@ import matplotlib.pyplot as plt
 tv_shows = pd.read_csv("data/tv_shows.csv")
 ```
 
-## Doing badly as an educator
+## Helping Learners can be hard
 
 - R Class for workforce training
 - RStudio was overwhelming for a learner
 - They quit the course
 
-# What could have made the experience better?
+# How could we make the experience better?
 
 ## Introducing WebR/Pyodide
 
@@ -180,6 +181,12 @@ gradethis::grade_this_code()
 
 :::
 
+::: {.fragment}
+::: aside
+[01-feedback-example](https://github.com/laderast/degrees_of_freedom/blob/main/01-feedback-example.qmd)
+:::
+:::
+
 ## In-Class Exercise Design Considerations
 
 - [x] Have all information available
@@ -223,6 +230,12 @@ feedback
 
 :::
 
+::: {.fragment}
+::: aside
+[01-feedback-example](https://github.com/laderast/degrees_of_freedom/blob/main/01-feedback-example.qmd)
+:::
+:::
+
 ## R-Bootcamp {.nonincremental}
 
 ::::{.columns}
@@ -255,7 +268,6 @@ feedback
 - Look at the [documentation for `arrange()`](https://dplyr.tidyverse.org/reference/arrange.html). Take a look at the examples.
 
 - How do we change the below code to sort by descending order?
-
 
 :::{.fragment}
 ```{webr}
@@ -293,6 +305,12 @@ gradethis::grade_this_code()
 
 :::
 
+:::{.fragment}
+::: aside
+[02-metalearning](https://github.com/laderast/degrees_of_freedom/blob/main/02-metalearning.qmd)
+:::
+:::
+
 ## Active Learning
 
 - WebR/Pyodide is excellent at this
@@ -324,7 +342,7 @@ gradethis::grade_this_code()
 - Sharing styling code with each other
 :::
 :::{.column}
-![https://wifflegif.com/gifs/477310-making-mr-right-sneak-peek-gif](paperdoll.gif)
+[![](paperdoll.gif)](https://wifflegif.com/gifs/477310-making-mr-right-sneak-peek-gif)
 :::
 ::::
 
@@ -365,6 +383,11 @@ plt.show()
 ```
 ::::
 
+:::{.fragment}
+::: aside
+[03-social-learning](https://github.com/laderast/degrees_of_freedom/blob/main/03-social-learning.qmd)
+:::
+:::
 
 ## [Data Snacks](https://hutchdatascience.org/data_snacks/)
 
